@@ -38,14 +38,15 @@
 function logout() {
     localStorage.removeItem("auth");
     localStorage.removeItem("role");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 // Protect page
 if (localStorage.getItem("auth") !== "true") {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 </script>
 
 </body>
 </html>
+
