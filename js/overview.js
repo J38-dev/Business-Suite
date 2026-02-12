@@ -1,5 +1,5 @@
 if (localStorage.getItem("auth") !== "true") {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 const total = orders.length;
@@ -29,3 +29,4 @@ new Chart(document.getElementById("salesChart"), {
         }]
     }
 });
+
