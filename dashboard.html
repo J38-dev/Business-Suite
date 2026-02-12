@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<nav>
+    <h2>Business Suite</h2>
+
+    <a href="dashboard.html">Overview</a>
+    <a href="sales.html">Sales</a>
+    <a href="products.html">Products</a>
+
+    <button onclick="logout()" class="logout-btn">Logout</button>
+</nav>
+
+<main>
+    <h1>Overview</h1>
+
+    <div class="grid">
+        <div class="card">Total Orders <strong id="orders"></strong></div>
+        <div class="card">Revenue <strong id="revenue"></strong></div>
+        <div class="card">Completed <strong id="completed"></strong></div>
+        <div class="card">Pending <strong id="pending"></strong></div>
+    </div>
+
+    <canvas id="salesChart"></canvas>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/data.js"></script>
+<script src="js/overview.js"></script>
+
+<script>
+function logout() {
+    localStorage.removeItem("auth");
+    localStorage.removeItem("role");
+    window.location.href = "login.html";
+}
+
+// Protect page
+if (localStorage.getItem("auth") !== "true") {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

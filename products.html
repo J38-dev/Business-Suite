@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<nav>
+    <h2>Business Suite</h2>
+
+    <a href="dashboard.html">Overview</a>
+    <a href="sales.html">Sales</a>
+    <a href="products.html">Products</a>
+
+    <button onclick="logout()" class="logout-btn">Logout</button>
+</nav>
+
+<main>
+    <h1>Product Management</h1>
+
+    <!-- ADD PRODUCT FORM -->
+    <div class="card">
+        <h3>Add New Product</h3>
+
+        <input id="productName" placeholder="Product Name">
+        <input id="productPrice" type="number" placeholder="Price">
+        <input id="productStock" type="number" placeholder="Stock Quantity">
+
+        <button onclick="addProduct()">Add Product</button>
+    </div>
+
+    <!-- PRODUCT TABLE -->
+    <div class="card">
+        <h3>Product List</h3>
+
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+    </div>
+
+</main>
+
+<script src="js/products.js"></script>
+
+<script>
+function logout() {
+    localStorage.removeItem("auth");
+    localStorage.removeItem("role");
+    window.location.href = "login.html";
+}
+
+// Protect page
+if (localStorage.getItem("auth") !== "true") {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

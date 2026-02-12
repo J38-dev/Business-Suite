@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<nav>
+    <h2>Business Suite</h2>
+
+    <a href="dashboard.html">Overview</a>
+    <a href="sales.html">Sales</a>
+    <a href="products.html">Products</a>
+
+    <button onclick="logout()" class="logout-btn">Logout</button>
+</nav>
+
+<main>
+    <h1>Sales Activity</h1>
+
+    <button onclick="exportCSV()">Export CSV</button>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="salesTable"></tbody>
+    </table>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/sales.js"></script>
+
+<script>
+function logout() {
+    localStorage.removeItem("auth");
+    localStorage.removeItem("role");
+    window.location.href = "login.html";
+}
+
+// Protect page
+if (localStorage.getItem("auth") !== "true") {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
