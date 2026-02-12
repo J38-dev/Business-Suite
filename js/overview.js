@@ -12,7 +12,7 @@ const revenue = orders
 document.getElementById("orders").textContent = total;
 document.getElementById("completed").textContent = completed;
 document.getElementById("pending").textContent = pending;
-document.getElementById("revenue").textContent = "$" + revenue;
+document.getElementById("revenue").textContent = "R" + revenue;
 
 // Chart
 new Chart(document.getElementById("salesChart"), {
@@ -29,4 +29,5 @@ new Chart(document.getElementById("salesChart"), {
         }]
     }
 });
+
 
