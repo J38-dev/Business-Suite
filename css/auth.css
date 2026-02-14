@@ -1,5 +1,5 @@
 * {
-    boz-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -38,4 +38,5 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
+
 
