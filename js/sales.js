@@ -5,8 +5,9 @@ orders.forEach(o => {
         <tr>
             <td>${o.id}</td>
             <td>${o.status}</td>
-            <td>$${o.amount}</td>
+            <td>${o.amount.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' })}</td>
         </tr>
     `;
     table.innerHTML += row;
 });
+
