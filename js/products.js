@@ -16,7 +16,7 @@ function renderProducts() {
         table.innerHTML += `
             <tr>
                 <td>${product.name}</td>
-                <td>$${product.price}</td>
+                <td>${product.price.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' })}</td>
                 <td>${product.stock}</td>
                 <td>
                     <button onclick="editProduct(${index})">Edit</button>
@@ -95,3 +95,4 @@ function saveProducts() {
 
 // INITIAL LOAD
 renderProducts();
+
