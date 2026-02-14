@@ -74,7 +74,7 @@ function editProduct(index) {
     const product = products[index];
 
     const newName = prompt("Edit name:", product.name);
-    const newPrice = prompt("Edit price:", product.price);
+    const newPrice = prompt("Edit price (R):", product.price);
     const newStock = prompt("Edit stock:", product.stock);
 
     if (newName !== null) product.name = newName;
@@ -95,4 +95,5 @@ function saveProducts() {
 
 // INITIAL LOAD
 renderProducts();
+
 
